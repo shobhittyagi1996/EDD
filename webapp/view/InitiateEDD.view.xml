@@ -1,0 +1,125 @@
+<mvc:View
+    controllerName="com.kpo.sm.eddapplication.controller.InitiateEDD"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+        
+        
+   
+                 
+                  
+            <f:SimpleForm
+                id="SimpleFormChange354"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false"
+                class="sapUiSmallMarginBottom"
+            >
+           
+               
+                <f:content>
+                    <Label text="EDD Title" />
+                    <Input />
+
+                    <Label text="Supplier From Ariba" />
+                    <Input
+                        valueHelpRequest="onAriba"
+                        showValueHelp="true"
+                    />
+                    <Label text="Supplier From BTP" />
+                    <Input
+                        valueHelpRequest="onBTP"
+                        showValueHelp="true"
+                    />
+
+                </f:content>
+                
+            </f:SimpleForm>
+            <Button
+            text="Preview EDD Questionnaires"
+            type="Emphasized"
+            press="onPreviewEdd"
+        />
+            <Table
+                id="id_CompanyTable"
+                items="{path:'myModel>/questions'}"
+                 visible="{myModel>/tableVisible}"
+                 width="100%"
+            >
+                <columns>
+                    <Column id="_IDGenColumn11" width="5rem" >
+                        <Text
+                            id="_IDGenText22"
+                            text="SN"
+                           
+                            
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn1" minScreenWidth="Small" demandPopin="true" >
+                        <Text
+                            id="_IDGenText2"
+                            text="Question Title"
+                            
+                        />
+                    </Column>
+                   
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <Text
+                                id="_IDGenText60"
+                                text="{myModel>supplierid}"
+                            />
+                            <Text text="{path: 'myModel>questionKey',  formatter: '.i18nFormatter'}" />
+                            
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+         <footer>
+            <OverflowToolbar id="Toolbar">
+                <ToolbarSpacer />
+
+               
+                <Button
+                    type="Emphasized"
+                    text="Submit"
+                    press="onSubmitMOM"
+                />
+
+                
+                <Button
+                    type="Reject"
+                    text="Cancel"
+                />
+                 <Button
+                    type="Emphasized"
+                    text="SupplierEDD"
+                    press="onSupplier"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
