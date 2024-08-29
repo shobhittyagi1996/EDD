@@ -21,6 +21,7 @@
       "authenticationType": "none",
       "destination": "ui5"
     },
+    
     {
       "source": "^(.*)$",
       "target": "$1",

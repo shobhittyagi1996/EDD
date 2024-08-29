@@ -29,7 +29,7 @@
     "crossNavigation": {
       "inbounds": {
         "manage-manage": {
-          "semanticObject": "manage",
+          "semanticObject": "EDDAssesment",
           "action": "manage",
           "title": "{{flpTitle}}",
           "signature": {

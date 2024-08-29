@@ -65,6 +65,7 @@
                  visible="{myModel>/tableVisible}"
                  width="100%"
             >
+            
                 <columns>
                     <Column id="_IDGenColumn11" width="5rem" >
                         <Text

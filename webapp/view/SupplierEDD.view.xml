@@ -3,6 +3,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns:f="sap.ui.layout.form"
+    xmlns:uxap="sap.uxap"
+    xmlns:upload="sap.m.upload"
     xmlns="sap.m"
 >
     <Page
@@ -10,79 +12,278 @@
         title="{i18n>title}"
     >
         <content>
-        
-        
-   
-                 
-                  
-           
-            <Table
-                id="id_CompanyTable"
-                items="{path:'sModel>/questions'}"
-                 
-                 width="100%"
+            <uxap:ObjectPageLayout
+                id="ObjectPageLayout"
+                upperCaseAnchorBar="false"
+                showAnchorBar="true"
+                enableLazyLoading="true"
             >
-                <columns>
-                    <Column id="_IDGenColumn11" width="5rem" >
-                        <Text
-                            id="_IDGenText22"
-                            text="SN"
-                           
-                            
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn1" width="15rem"  >
-                        <Text
-                            id="_IDGenText2"
-                            text="Title"
-                            
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn12" width="10rem"  >
-                        <Text
-                            id="_IDGenText23"
-                            text="Response"
-                           
-                            
-                        />
-                   </Column>
-                   <Column id="_IDGenColumn13" width="15rem" >
-                        <Text
-                            id="_IDGenText24"
-                            text="Description"
-                           
-                            
-                        />
-                   </Column>
-                </columns>
-                <items>
-                    <ColumnListItem id="_IDGenColumnListItem1">
-                        <cells>
-                            <Text
-                                id="_IDGenText60"
-                                text="{sModel>supplierid}"
-                            />
-                            <Text text="{path: 'sModel>questionKey',  formatter: '.i18nFormatterSupplier'}" />
-                            <RadioButtonGroup
-                                select="onSelect"
-                                columns="2"
-                                id="radiobuttonid"
+                <uxap:sections>
+                    <uxap:ObjectPageSection
+                        id="_IDGenObjectPageSection1"
+                        showTitle="false"
+                    >
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection1"
+                                title="{i18n>ques} "
                             >
-                                <RadioButton
-                                    text="yes"
-                                    selected="false"
-                                    id="yes"
-                                />
-                                <RadioButton text="no"
-                                id="no" />
-                            </RadioButtonGroup>
-                            <TextArea  />
-                            
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+                                <uxap:blocks>
+                                    <Table
+                                        id="id_SupplierTable"
+                                        items="{path:'sModel>/questions'}"
+                                        width="100%"
+                                    >
+                                        <columns>
+                                            <Column
+                                                id="_IDGenColumn11"
+                                                width="5rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenText22"
+                                                    text="{i18n>sn}"
+                                                />
+                                            </Column>
+                                            <Column id="_IDGenColumn1">
+                                                <Text
+                                                    id="_IDGenText2"
+                                                    text="{i18n>questiontitle}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColumn12"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenText23"
+                                                    text="{i18n>response}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColumn13"
+                                                width="15rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenText24"
+                                                    text="{i18n>desc}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColumn14"
+                                                width="15rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenText25"
+                                                    text="{i18n>res}"
+                                                />
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem
+                                                id="_IDGenColumnListItem1"
+                                            >
+                                                <cells>
+                                                    <Text
+                                                        id="_IDGenText60"
+                                                        text="{sModel>supplierid}"
+                                                    />
+                                                    <Text
+                                                        text="{path: 'sModel>questionKey',  formatter: '.i18nFormatterSupplier'}"
+                                                    />
+                                                    <RadioButtonGroup
+                                                        select="onSelect"
+                                                        columns="2"
+                                                        id="radiobuttonid"
+                                                    >
+                                                        <RadioButton
+                                                            text="{i18n>yes}"
+                                                            selected="false"
+                                                            id="yes"
+                                                        />
+                                                        <RadioButton
+                                                            text="{i18n>no}"
+                                                            id="no"
+                                                        />
+                                                    </RadioButtonGroup>
+                                                    <TextArea cols="40" />
+                                                    <Link
+                                                        text="{sModel>link}"
+                                                        href="{sModel>link}"
+                                                         target="_blank"
+                                                    />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection2000"
+                                title="{i18n>comp}"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="id_SupplierTable1"
+                                        items="{stModel>/}"
+                                        width="100%"
+                                        mode="SingleSelectLeft"
+                                    >
+                                        <columns>
+                                            <Column
+                                                id="_IDGenCo"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTe"
+                                                    text="{i18n>templetetitle}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColum"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTex"
+                                                    text="{i18n>previewtemplate}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColumn2"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGnTe"
+                                                    text="{i18n>downloadtemplate}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenCon13"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGet24"
+                                                    text="{i18n>esign}"
+                                                />
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem
+                                                id="_IDGenCoistItem1"
+                                            >
+                                                <cells>
+                                                    <Text
+                                                        id="_IDGenText0"
+                                                        text="{stModel>documentTitle}"
+                                                    />
+                                                    <Button
+                                                        text="Preview"
+                                                        press="onPreview"
+                                                    />
+                                                    <Button
+                                                        text="Download Templete"
+                                                        press="onDownload"
+                                                    />
+                                                    <Button
+                                                        text="E-sign"
+                                                        press="onSignButtonPress"
+                                                    />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection2"
+                                title="{i18n>attachment}"
+                            >
+                                <uxap:blocks>
+                                    <upload:UploadSet
+                                        id="uploadSet"
+                                        instantUpload="false"
+                                        uploadEnabled="true"
+                                        showIcons="true"
+                                        afterItemAdded="onAfterItemAdded"
+                                        uploadCompleted="onUploadCompleted"
+                                        items="{
+                                path: '/Files',
+                                parameters: {
+                                    $orderby: 'createdAt desc'
+                                },
+                                templateShareable: false}"
+                                    >
+                                        <!-- <upload:toolbar>
+                    <OverflowToolbar>
+                        
+                        <Title text="Attachment"/>
+                    </OverflowToolbar>
+                </upload:toolbar> -->
+
+                                        <upload:items>
+                                            <upload:UploadSetItem
+                                                fileName="{fileName}"
+                                                mediaType="{mediaType}"
+                                                url="{url}"
+                                                thumbnailUrl="{
+                                path: 'mediaType',
+                                formatter: '.formatThumbnailUrl'
+                            }"
+                                                enabledEdit="false"
+                                                openPressed="onOpenPressed"
+                                                removePressed="onRemovePressed"
+                                            >
+                                                <upload:attributes>
+                                                    <ObjectAttribute
+                                                        title="Uploaded By"
+                                                        text="{createdBy}"
+                                                        active="false"
+                                                    />
+                                                    <ObjectAttribute
+                                                        title="Uploaded on"
+                                                        text="{createdAt}"
+                                                        active="false"
+                                                    />
+                                                    <ObjectAttribute
+                                                        title="File Type"
+                                                        text="{mediaType}"
+                                                        active="false"
+                                                    />
+                                                    <ObjectAttribute
+                                                        title="File Size"
+                                                        text="{size}"
+                                                        active="false"
+                                                    />
+                                                </upload:attributes>
+                                            </upload:UploadSetItem>
+                                        </upload:items>
+                                    </upload:UploadSet>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                </uxap:sections>
+            </uxap:ObjectPageLayout>
         </content>
-        
+        <footer>
+            <OverflowToolbar id="Toolbar">
+                <ToolbarSpacer />
+
+                <Button
+                    type="Emphasized"
+                    text="{i18n>submit}"
+                    press="onSubmit"
+                />
+
+                <Button
+                    type="Reject"
+                    text="{i18n>cancel}"
+                />
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>
