@@ -8,7 +8,7 @@
     xmlns="sap.m"
 >
     <Page
-        id="page"
+        id="page1"
         title="{i18n>title}"
     >
         <content>
@@ -36,17 +36,17 @@
                                     >
                                         <columns>
                                             <Column
-                                                id="_IDGenColumn11"
+                                                id="_IDGenColumn1011"
                                                 width="5rem"
                                             >
                                                 <Text
-                                                    id="_IDGenText22"
+                                                    id="_IDGenText022"
                                                     text="{i18n>sn}"
                                                 />
                                             </Column>
-                                            <Column id="_IDGenColumn1">
+                                            <Column id="_IDGenColumn1111">
                                                 <Text
-                                                    id="_IDGenText2"
+                                                    id="_IDGenText232"
                                                     text="{i18n>questiontitle}"
                                                 />
                                             </Column>
@@ -80,11 +80,11 @@
                                         </columns>
                                         <items>
                                             <ColumnListItem
-                                                id="_IDGenColumnListItem1"
+                                                id="_IDGenColumnListItem12"
                                             >
                                                 <cells>
                                                     <Text
-                                                        id="_IDGenText60"
+                                                        id="_IDGenText6012"
                                                         text="{sModel>supplierid}"
                                                     />
                                                     <Text
@@ -109,7 +109,7 @@
                                                     <Link
                                                         text="{sModel>link}"
                                                         href="{sModel>link}"
-                                                         target="_blank"
+                                                        target="_blank"
                                                     />
                                                 </cells>
                                             </ColumnListItem>
@@ -120,8 +120,297 @@
                         </uxap:subSections>
                         <uxap:subSections>
                             <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection525"
+                                title="{i18n>cetificateofcorporateownershipanddeclaration}"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="id_Table2"
+                                        width="100%"
+                                        mode="SingleSelectLeft"
+                                        items="{oTable1Model>/}"
+                                    >
+                                        <headerToolbar>
+                                            <OverflowToolbar>
+                                                <Title
+                                                    id="idTableTitle"
+                                                    text="{i18n>detailsofdirectorsandofficersofcompany}"
+                                                />
+
+                                                <ToolbarSpacer />
+
+                                                <Button
+                                                    id="idAddButton"
+                                                    text="{i18n>add}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://add"
+                                                    press="onAddPressTable1"
+                                                />
+
+                                                <Button
+                                                    id="idDeleteButton"
+                                                    text="{i18n>delete}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://delete"
+                                                    press="onDeletePressTable1"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+                                        <columns>
+                                            <Column
+                                                id="_IDGenCo1"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTe1"
+                                                    text="{i18n>fullName}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColum1"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTex11"
+                                                    text="{i18n>dateOfBirth}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColumn21"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGnTe11"
+                                                    text="{i18n>positionandDateofappointment}"
+                                                />
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem
+                                                id="_IDGenColumnItem12"
+                                            >
+                                                <cells>
+                                                    <Input
+                                                        id="_IDGeext2"
+                                                        value="{oTable1Model>fullname}"
+                                                    />
+                                                    <Input
+                                                        value="{oTable1Model>dateofbirth}"
+                                                    />
+                                                   <Input
+                                                        value="{oTable1Model>dateofappointment}"
+                                                    />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection5256"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="id_Table4"
+                                        width="100%"
+                                        mode="SingleSelectLeft"
+                                    >
+                                        <headerToolbar>
+                                            <OverflowToolbar>
+                                                <Title
+                                                    id="idTableTitle1"
+                                                    text="{i18n>detailsofshareholdersandownership}"
+                                                />
+
+                                                <ToolbarSpacer />
+
+                                                <Button
+                                                    id="idAddButton1"
+                                                    text="{i18n>add}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://add"
+                                                />
+
+                                                <Button
+                                                    id="idDeleteButton1"
+                                                    text="{i18n>delete}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://delete"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+                                        <columns>
+                                            <Column
+                                                id="_IDGenCo12"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTe01"
+                                                    text="{i18n>FullName}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColum11110"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTx11"
+                                                    text="{i18n>DateofBirth}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenCoum19"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGne11"
+                                                    text="{i18n>detailsofshareholdingandownership}"
+                                                />
+                                            </Column>
+                                        </columns>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection525o"
+                                title="{i18n>declarationofcompliance}"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="id_Table02"
+                                        width="100%"
+                                        mode="SingleSelectLeft"
+                                    >
+                                        <headerToolbar>
+                                            <OverflowToolbar>
+                                                <Title
+                                                    id="idTableTitle03"
+                                                    text="{i18n>detailsofrelationshipsofgovtofficialskpostaff}"
+                                                />
+
+                                                <ToolbarSpacer />
+
+                                                <Button
+                                                    id="idAddButton02"
+                                                    text="{i18n>add}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://add"
+                                                    press="onAddPress"
+                                                />
+
+                                                <Button
+                                                    id="idDeleteButton01"
+                                                    text="{i18n>delete}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://delete"
+                                                    press="onDeletePress"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+                                        <columns>
+                                            <Column
+                                                id="_IDGenCo11"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTe10"
+                                                    text="{i18n>fullNameofshareholderowner}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenCoum1"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTex110"
+                                                    text="{i18n>detailsofshareholdingandownership}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColumn210"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGnTe110"
+                                                    text="{i18n>detailsofgovernmentofficialkpostaffandtypeofrelationship}"
+                                                />
+                                            </Column>
+                                        </columns>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection52565"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="id_Table6"
+                                        width="100%"
+                                        mode="SingleSelectLeft"
+                                    >
+                                        <headerToolbar>
+                                            <OverflowToolbar>
+                                                <Title
+                                                    id="idTableTitle2"
+                                                    text="{i18n>detailsofrelationshipswithgovernmentofficialsandkpoemployee}"
+                                                />
+
+                                                <ToolbarSpacer />
+
+                                                <Button
+                                                    id="idAddButton2"
+                                                    text="{i18n>add}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://add"
+                                                />
+
+                                                <Button
+                                                    id="idDeleteButton2"
+                                                    text="{i18n>delete}"
+                                                    type="Transparent"
+                                                    icon="sap-icon://delete"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+                                        <columns>
+                                            <Column
+                                                id="_IDGenCo120"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTe011"
+                                                    text="{i18n>relationship}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenColum111101"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGenTx111"
+                                                    text="{i18n>detailsofgovernmentofficials}"
+                                                />
+                                            </Column>
+                                            <Column
+                                                id="_IDGenCoum10"
+                                                width="10rem"
+                                            >
+                                                <Text
+                                                    id="_IDGne110"
+                                                    text="{i18n>detailsofkpoemployee}"
+                                                />
+                                            </Column>
+                                        </columns>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
                                 id="_IDGenObjectPageSubSection2000"
-                                title="{i18n>comp}"
+                                title="{i18n>complianceEthicalConductLetterEsign}"
                             >
                                 <uxap:blocks>
                                     <Table
@@ -270,7 +559,7 @@
             </uxap:ObjectPageLayout>
         </content>
         <footer>
-            <OverflowToolbar id="Toolbar">
+            <OverflowToolbar id="Toolbar12">
                 <ToolbarSpacer />
 
                 <Button

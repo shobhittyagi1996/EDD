@@ -2,14 +2,17 @@ sap.ui.define(
     [
         "sap/ui/core/mvc/Controller",
         "sap/ui/model/json/JSONModel",
+        "sap/m/MessageToast",
 
         "sap/ui/core/ws/WebSocket"
     ],
-    function (BaseController, JSONModel, WebSocket) {
+    function (BaseController, JSONModel, WebSocket, MessageToast) {
         "use strict";
 
         return BaseController.extend("com.kpo.sm.eddapplication.controller.SupplierEDD", {
             onInit: function () {
+                let oTable1Model = new JSONModel([]);
+                this.getView().setModel(oTable1Model, "oTable1Model")
                 var sData = {
                     questions: [
                         { "supplierid": "1", "questionKey": "question_1a" },
@@ -386,6 +389,54 @@ sap.ui.define(
                         console.log(err)
                     });
             },
+            onAddPressTable1: function(){
+                var oTable1 = this.getView().getModel("oTable1Model");
+                let oTable1Data = oTable1.getData();
+                oTable1Data.push({
+                    fullname: "",
+                    dateofbirth: "",
+                    dateofappointment: "",
+                    
+                })
+
+                oTable1.setData(oTable1Data);
+                oTable1.refresh()
+
+            
+
+            },
+            onDeletePressTable1: function() {
+                var oTable = this.byId("id_Table2"); // Assuming your table has id 'id_Table2'
+            var oTable1Model = this.getView().getModel("oTable1Model"); // Fetch the model
+            var oTable1Data = oTable1Model.getData(); // Get the data from the model
+
+            // Get selected item
+            var selectedItem = oTable.getSelectedItem();
+
+            if (selectedItem) { // Check if any row is selected
+                // Get the index of the selected item
+                var selectedIndex = oTable.indexOfItem(selectedItem);
+
+                // Remove the selected row from the data
+                oTable1Data.splice(selectedIndex, 1);
+
+                // Update the model with the modified data
+                oTable1Model.setData(oTable1Data);
+
+                // Refresh the table
+                oTable1Model.refresh();
+
+                // Clear the selection after deletion
+                oTable.clearSelection();
+
+                // Show success message
+                MessageToast.show("Row deleted successfully");
+            } else {
+                // Show a message if no row is selected
+                MessageToast.show("Please select a row to delete.");
+            }
+        }
+            
 
 
 
